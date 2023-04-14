@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONEWeb - Jeison Martinez Lopez</title>
+    <link rel="shortcut icon" href="img/oracle_logo_icon_145005.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Link de icons basicos gratuitos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<!-- Encabezado -->
+    <header>
+    <!-- Navbar -->
+        <div class="nav container">
+            
+    <!-- ONE -->
+        <a href="index.html" class="logo"><span>O</span>NE</a>
+        <!-- ? -->
+        <a href="../index.html" class="back">Regresar</a>
+        </div>
+    </header>
+<!-- Inicio -->
+    <section class="home" id="inicio">
+        <div class="home-text container">
+            <h2 class="home-title">Challenge ONE</h2>
+            <span class="home-subtitle">Challenge ONE Sprint 01: Construye un encriptador de texto con Javascript</span>
+        </div>
+        <input type="text">
+        <button onclick="verificar()">Hole</button>
+    </section>
+    <!-- Footer -->
+    <div class="footer container">
+        <p>&#169; Jeison Martinez-ONE All Right Reserved</p>
+        <div class="social">
+            <a href=""><i class="bx bxl-discord"></i></a>
+            <a href=""><i class="bx bxl-linkedin"></i></a>
+            <a href=""><i class="bx bxl-twitter"></i></a>
+            <a href=""><i class="bx bxl-instagram"></i></a>
+        </div>
+    </div>
+    <script>
+        var secreto = 5;
+        var numero = document.querySelector("input");
+
+        function verificar() {
+            if (parseInt(numero.value) == secreto) {
+                alert("bien");
+            } else {
+                alert("mal");
+            }
+        }
+            </script>
+<!-- Script JQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script src="../js/main.js"></script>    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE</title>
+</head>
+<body>
+    <h1>Calcular IMC</h1>
+</body>
+<script>
+    function saltarLineas(){
+        document.write("<br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        saltarLineas();
+    }
+
+    var partidosGanados = 3;
+    var partidosEmpatados = 1;
+    //parseInt = Convertir numeros ingresados en vez de texto el programa los lea como numeros
+    var G = parseInt(prompt("Ingrese los partidos ganados"));
+    var E = parseInt(prompt("Ingrese los partidos empatados"));
+    var totalPuntos = (G * partidosGanados) + (E * partidosEmpatados);
+    var puntosPasados = 81;
+        if (totalPuntos > puntosPasados) {
+            alert("El equipo a mejorado en puntos");
+        }else if (totalPuntos == puntosPasados) {
+            alert("Estamos igual de pendejos");
+        }else {
+            alert("Vamos peor loco")
+        }
+
+    imprimir("El total de puntos del equipo es de:" + totalPuntos);
+
+</script>
+</html>

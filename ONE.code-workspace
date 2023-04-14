@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Trabajos Uniminuto/QUINTO SEMESTRE/Programacion Web/JAVASCRIPT"
+		},
+		{
+			"path": "../FitPage"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "ONE"
+	}
+}
