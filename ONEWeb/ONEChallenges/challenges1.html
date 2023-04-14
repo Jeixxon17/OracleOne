@@ -28,9 +28,18 @@
             <h2 class="home-title">Challenge ONE</h2>
             <span class="home-subtitle">Challenge ONE Sprint 01: Construye un encriptador de texto con Javascript</span>
         </div>
-        <input type="text">
-        <button onclick="verificar()">Hole</button>
     </section>
+    <br>
+    <div class="container">
+        <div class="encrip">
+            <textarea name="texto" id="texto" cols="50" rows="20" placeholder="Ingrese Un Texto."></textarea>
+            <textarea name="encriptador" id="encriptador" cols="30" rows="20"></textarea>
+        </div>
+        <div class="btn-encrip">
+            <button onclick="encriptar()">Encriptar Texto.</button>
+            <button onclick="desencriptar()">Desencriptar texto.</button>
+        </div>
+    </div>
     <!-- Footer -->
     <div class="footer container">
         <p>&#169; Jeison Martinez-ONE All Right Reserved</p>
@@ -42,17 +51,39 @@
         </div>
     </div>
     <script>
-        var secreto = 5;
-        var numero = document.querySelector("input");
-
-        function verificar() {
-            if (parseInt(numero.value) == secreto) {
-                alert("bien");
-            } else {
-                alert("mal");
+        
+        function encriptarTexto(texto) {
+            var resultado = "";
+            for (var i = 0; i < texto.length; i++) {
+                switch (texto[i]) {
+                case "e":
+                    resultado += "enter";
+                    break;
+                case "i":
+                    resultado += "imes";
+                    break;
+                case "a":
+                    resultado += "ai";
+                    break;
+                case "o":
+                    resultado += "ober";
+                    break;
+                case "u":
+                    resultado += "ufat";
+                    break;
+                default:
+            resultado += texto[i];
+                }
             }
+        return resultado;
         }
-            </script>
+
+        function encriptar() {
+            var texto = document.getElementById("texto").value;
+            var textoEncriptado = encriptarTexto(texto);
+            document.getElementById("encriptador").value = textoEncriptado;
+        }
+    </script>
 <!-- Script JQuery -->
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 <script src="../js/main.js"></script>    
