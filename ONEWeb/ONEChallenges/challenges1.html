@@ -32,8 +32,11 @@
     <br>
     <div class="container">
         <div class="encrip">
-            <textarea name="texto" id="texto" cols="50" rows="20" placeholder="Ingrese Un Texto."></textarea>
-            <textarea name="encriptador" id="encriptador" cols="30" rows="20"></textarea>
+            <textarea name="texto" id="texto" cols="50" rows="15" placeholder="Ingrese Un Texto."></textarea>
+            <textarea name="encriptador" id="encriptador" cols="30" rows="15" placeholder="Aqui Se visualiza los mensajes." disabled></textarea>
+        </div>
+        <div class="condiciones">
+            <i class='bx bx-info-circle'>Solo se permiten minusculas y sin Acento</i>
         </div>
         <div class="btn-encrip">
             <button onclick="encriptar()">Encriptar Texto.</button>
@@ -45,50 +48,14 @@
         <p>&#169; Jeison Martinez-ONE All Right Reserved</p>
         <div class="social">
             <a href=""><i class="bx bxl-discord"></i></a>
-            <a href=""><i class="bx bxl-linkedin"></i></a>
-            <a href=""><i class="bx bxl-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/jeison-andres-martinez-lopez-b5665b272/"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://twitter.com/_YeisonX_"><i class="bx bxl-twitter"></i></a>
             <a href=""><i class="bx bxl-instagram"></i></a>
         </div>
     </div>
-    <script>
-        
-        function encriptarTexto(texto) {
-            var resultado = "";
-            for (var i = 0; i < texto.length; i++) {
-                switch (texto[i]) {
-                case "e":
-                    resultado += "enter";
-                    break;
-                case "i":
-                    resultado += "imes";
-                    break;
-                case "a":
-                    resultado += "ai";
-                    break;
-                case "o":
-                    resultado += "ober";
-                    break;
-                case "u":
-                    resultado += "ufat";
-                    break;
-                default:
-            resultado += texto[i];
-                }
-            }
-        return resultado;
-        }
-
-        function encriptar() {
-            var texto = document.getElementById("texto").value;
-            var textoEncriptado = encriptarTexto(texto);
-            document.getElementById("encriptador").value = textoEncriptado;
-        }
-    </script>
+    <script src="js/script.js"></script>
 <!-- Script JQuery -->
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 <script src="../js/main.js"></script>    
 </body>
 </html>
-
-
-<!-- jkshwjbcwc -->
