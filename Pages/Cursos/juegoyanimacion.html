@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Creacion De Banderas</h1>
+        <canvas width="600" height="400">
+
+        </canvas>
+    </div>
+    <div>
+        <h1>Cara Crepper</h1>
+        <canvas id="crepper" width="600" height="400">
+
+        </canvas>
+    </div>
+
+    <div>
+        <h1>Escuadra</h1>
+        <canvas id="escuadra" width="600" height="400">
+
+        </canvas>
+    </div>
+
+    <div>
+        <h1>Continuacion...</h1>
+        <canvas id="continuacion" width="600" height="400">
+
+        </canvas>
+    </div>
+
+    <div>
+        <h1>Flor</h1>
+        <canvas id="flor" width="600" height="400">
+
+        </canvas>
+    </div>
+
+    <div>
+        <h1>Click Para Hablar</h1>
+        <canvas id="tablero" width="600" height="400">
+
+        </canvas>
+    </div>
+
+    <div>
+        <h1>En movimiento</h1>
+        <canvas id="mover" width="600" height="400">
+
+        </canvas>
+    </div>
+    <script>
+        var pizzara1, lapiz1;
+        pizzara1 = document.getElementById('escuadra');
+        lapiz1 = pizzara1.getContext("2d");
+
+        lapiz1.fillStyle = "black";
+        lapiz1.beginPath();
+        lapiz1.moveTo(50, 50);
+        lapiz1.lineTo(50, 400);
+        lapiz1.lineTo(400, 400);
+        lapiz1.fill();
+
+        lapiz1.fillStyle='white';
+        lapiz1.beginPath();
+        lapiz1.moveTo(100, 175);
+        lapiz1.lineTo(100, 350);
+        lapiz1.lineTo(275, 350);
+        lapiz1.fill();
+
+        var pizzara, lapiz;
+        pizzara = document.getElementById('crepper');
+        lapiz = pizzara.getContext("2d");
+
+        lapiz.fillStyle = "lightgrey";
+        lapiz.fillRect(0,0,600,400);
+        //Rectangulo 1
+        lapiz.fillStyle = "darkgreen";
+        lapiz.fillRect(50, 50, 350, 300);
+        //Rectangulo 2 y 3(ojos)
+        lapiz.fillStyle = "black";
+        lapiz.fillRect(95, 100, 90, 90);
+        lapiz.fillStyle = "black";
+        lapiz.fillRect(255, 100, 90, 90);
+        //Rectangulo 4(nariz)
+        lapiz.fillStyle = "black";
+        lapiz.fillRect(185, 190, 70, 100);
+        //Rectangulo 2 y 3(ojos)
+        lapiz.fillStyle = "black";
+        lapiz.fillRect(150, 240, 40, 110);
+        lapiz.fillStyle = "black";
+        lapiz.fillRect(250, 240, 40, 110);
+
+        var pantalla, pincel; 
+        pantalla = document.querySelector('canvas');
+        pincel = pantalla.getContext("2d");
+
+        //Estilo
+        pincel.fillStyle = "lightgrey";
+        //Creacion de un rectangulo
+        pincel.fillRect(0,0,600,400);
+        //Posicion x, posicion y, width, height
+
+        pincel.fillStyle = "green";
+        pincel.fillRect(0,0,200,400);
+
+         pincel.fillStyle = "red";
+        pincel.fillRect(400,0,200,400);
+        //Comienza desde la posicion x 400
+
+        //Triangulo
+        pincel.fillStyle = "yellow";
+        pincel.beginPath();
+        pincel.moveTo(300, 200);
+        pincel.lineTo(200, 400);
+        pincel.lineTo(400, 400);
+        pincel.fill();
+
+        //Circulo
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(300, 200, 50, 0, 2*3.14);
+        pincel.fill();
+
+        //Continuacion...
+        function dibujarCuadrado(x,y, color) {
+            var pantalla2, pincel2; 
+            pantalla2 = document.getElementById('continuacion');
+            pincel2 = pantalla2.getContext("2d");
+
+            pincel2.fillStyle = color;
+            pincel2.fillRect(x,y,50,50);
+            pincel2.strokeStyle = "black";
+            pincel2.strokeRect(x,y,50,50);
+
+        }
+
+        // var x = 0;
+        // while (x < 600) {
+        //     dibujarCuadrado(x, 0, "red");
+        //     dibujarCuadrado(x, 50, "yellow");
+        //     dibujarCuadrado(x, 100, "green");
+        //     x = x + 50;
+        // }
+
+        for (var x = 0; x < 600; x = x + 50) {
+            dibujarCuadrado(x, 0, "red");
+            dibujarCuadrado(x, 50, "yellow");
+            dibujarCuadrado(x, 100, "green");
+        }
+        
+        //Flor
+        var pantallaf = document.getElementById("flor");
+        var pincelf = pantallaf.getContext("2d");
+        pincelf.fillStyle = "lightgray";
+        pincelf.fillRect(0, 0, 600, 400);
+
+        function dibujarCirculo(x, y, radio, color) {
+
+            pincelf.fillStyle = color;
+            pincelf.beginPath();
+            pincelf.arc(x, y, radio, 0, 2*3.14);
+            pincelf.fill();
+        }
+
+        function dibujarFlor(x,y) {
+            dibujarCirculo(x, y+20, 10, "blue");
+            dibujarCirculo(x, y, 10, "red");
+            dibujarCirculo(x, y-20, 10, "yellow");
+            dibujarCirculo(x-20, y, 10, "orange");
+            dibujarCirculo(x+20, y, 10, "black");
+        }
+        dibujarFlor(300,200);
+
+        //Tablero
+        var pantallat = document.getElementById("tablero");
+        var pincelt = pantallat.getContext("2d");
+        pincelt.fillStyle = "grey";
+        pincelt.fillRect(0, 0, 600, 400);
+
+        function exibirAlerta(evento) {
+            var x = evento.pageX - pantallat.offsetLeft;
+            var y = evento.pageY - pantallat.offsetTop;
+            console.log(evento);
+            alert(x + "," +  y + "Usted hizo un Click"); 
+        }
+
+        function dibujarCirculoT(evento) {
+            var x = evento.pageX - pantallat.offsetLeft;
+            var y = evento.pageY - pantallat.offsetTop;
+            pincelt.fillStyle = "blue";
+            pincelt.beginPath();
+            pincelt.arc(x,y,10,0,2*3.14);
+            pincelt.fill();
+            console.log(x + "," +  y);
+        }
+
+        // pantallat.onclick = exibirAlerta;
+        pantallat.onclick = dibujarCirculoT;
+
+        //En movimiento
+        var pantallam = document.getElementById("mover");
+        var pincelm = pantallam.getContext("2d");
+        pincelm.fillStyle = "grey";
+        pincelm.fillRect(0, 0, 600, 400);
+
+        function Circulo(x,y,radio) {
+            pincelm.fillStyle = "blue";
+            pincelm.beginPath();
+            pincelm.arc(x,y,radio,0,2*Math.PI);
+            pincelm.fill();
+        }
+
+        function limpiarPantalla(){
+            pincelm.clearRect(0,0,600,400);
+        }
+
+        var x = 0;
+
+        function actualizarPantalla(){
+            limpiarPantalla();
+            Circulo(x,20,20);
+            x++;
+        }
+
+        setInterval(actualizarPantalla,);
+        //Documentacion 2d canvas API CANVAS
+    </script>
+</body>
+</html>
